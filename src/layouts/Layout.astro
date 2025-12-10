@@ -1,17 +1,20 @@
 ---
-const {titlePage} = Astro.props;
+const { titlePage } = Astro.props;
 ---
+
 <!doctype html>
 <html lang="en">
-
     <head>
         <meta charset="UTF-8" />
         <meta name="viewport" content="width=device-width" />
         <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
         <meta name="generator" content={Astro.generator} />
-        <link rel="preconnect" href="https://fonts.googleapis.com">
-        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-        <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
+        <link rel="preconnect" href="https://fonts.googleapis.com" />
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+        <link
+            href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
+            rel="stylesheet"
+        />
         <title>{titlePage}</title>
     </head>
     <body>
@@ -32,7 +35,7 @@ const {titlePage} = Astro.props;
                 <div id="cart-empty">Tu carrito está vacío.</div>
                 <div id="cart-items"></div>
 
-                <hr/>
+                <hr />
 
                 <div id="cart-summary">
                     <p>Subtotal: <span id="cart-subtotal">$0</span></p>
@@ -41,12 +44,18 @@ const {titlePage} = Astro.props;
                 </div>
 
                 <form id="coupon-form">
-                    <label for="coupon-code">Cupón de descuento</label><br/>
-                    <input id="coupon-code" type="text" placeholder="CÓDIGO DE TU CUPÓN"/>
+                    <label for="coupon-code">Cupón de descuento</label><br />
+                    <input
+                        id="coupon-code"
+                        type="text"
+                        placeholder="CÓDIGO DE TU CUPÓN"
+                    />
                     <button type="submit">Aplicar cupón</button>
                 </form>
 
-                <button id="checkout-btn" class="checkout">Finalizar compra</button>
+                <button id="checkout-btn" class="checkout"
+                    >Finalizar compra</button
+                >
             </div>
         </aside>
     </body>
@@ -54,65 +63,70 @@ const {titlePage} = Astro.props;
 
 <script src="/cart.js" is:inline></script>
 <script>
-    document.querySelectorAll('li').forEach(item => {
-        item.addEventListener('click', event => {
-            const img = item.querySelector('img');
+    document.querySelectorAll("li").forEach((item) => {
+        item.addEventListener("click", (event) => {
+            const img = item.querySelector("img");
             if (img) {
-                const overlay = document.createElement('div');
-                overlay.style.position = 'fixed';
-                overlay.style.top = '0';
-                overlay.style.left = '0';
-                overlay.style.width = '100%';
-                overlay.style.height = '100%';
-                overlay.style.backgroundColor = 'rgba(0, 0, 0, 0.8)';
-                overlay.style.display = 'flex';
-                overlay.style.alignItems = 'center';
-                overlay.style.justifyContent = 'center';
-                overlay.style.zIndex = '1000';
-                overlay.style.backdropFilter = 'blur(10px)';
-                
-                const enlargedImg = document.createElement('img');
+                const overlay = document.createElement("div");
+                overlay.style.position = "fixed";
+                overlay.style.top = "0";
+                overlay.style.left = "0";
+                overlay.style.width = "100%";
+                overlay.style.height = "100%";
+                overlay.style.backgroundColor = "rgba(0, 0, 0, 0.8)";
+                overlay.style.display = "flex";
+                overlay.style.alignItems = "center";
+                overlay.style.justifyContent = "center";
+                overlay.style.zIndex = "1000";
+                overlay.style.backdropFilter = "blur(10px)";
+
+                const enlargedImg = document.createElement("img");
                 enlargedImg.src = img.src;
-                enlargedImg.style.maxWidth = '90%';
-                enlargedImg.style.maxHeight = '90%';
-                enlargedImg.style.borderRadius = '1rem';
-                
+                enlargedImg.style.maxWidth = "90%";
+                enlargedImg.style.maxHeight = "90%";
+                enlargedImg.style.borderRadius = "1rem";
+
                 overlay.appendChild(enlargedImg);
                 document.body.appendChild(overlay);
-                
-                overlay.addEventListener('click', () => {
+
+                overlay.addEventListener("click", () => {
                     document.body.removeChild(overlay);
                 });
             }
         });
     });
-    document.addEventListener('DOMContentLoaded', () => {
-        const items = document.querySelectorAll('section li');
-        items.forEach(el => {
-            el.classList.add('reveal');
-            el.style.setProperty('--ratio', '0');
+    document.addEventListener("DOMContentLoaded", () => {
+        const items = document.querySelectorAll("section li");
+        items.forEach((el) => {
+            el.classList.add("reveal");
+            el.style.setProperty("--ratio", "0");
         });
 
-        const observer = new IntersectionObserver((entries) => {
-            entries.forEach(entry => {
-                const ratio = entry.intersectionRatio;
-                entry.target.style.setProperty('--ratio', ratio.toFixed(2));
-                if (entry.isIntersecting) {
-                    entry.target.classList.add('reveal-visible');
-                } else {
-                    entry.target.classList.remove('reveal-visible');
-                }
-            });
-        }, { threshold: [0, 0.25, 0.5, 0.75, 1], rootMargin: '0px 0px -10% 0px' });
+        const observer = new IntersectionObserver(
+            (entries) => {
+                entries.forEach((entry) => {
+                    const ratio = entry.intersectionRatio;
+                    entry.target.style.setProperty("--ratio", ratio.toFixed(2));
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add("reveal-visible");
+                    } else {
+                        entry.target.classList.remove("reveal-visible");
+                    }
+                });
+            },
+            {
+                threshold: [0, 0.25, 0.5, 0.75, 1],
+                rootMargin: "0px 0px -10% 0px",
+            },
+        );
 
-        items.forEach(el => observer.observe(el));
+        items.forEach((el) => observer.observe(el));
     });
 </script>
 
 <style>
-    html{
-        background-image: url("https://red2030.com/wp-content/uploads/2021/04/jardin_vertical_Snatander-scaled.jpg"
-);
+    html {
+        background-image: url("https://red2030.com/wp-content/uploads/2021/04/jardin_vertical_Snatander-scaled.jpg");
         background-size: cover;
         background-repeat: no-repeat;
         background-position: center;
@@ -124,122 +138,119 @@ const {titlePage} = Astro.props;
         max-width: 600px;
         padding: 1rem;
         height: 100%;
-        border: solid #4E342E 1px;
+        border: solid #4e342e 1px;
         border-radius: 0.5rem;
 
         font-family: "Poppins", serif;
- 
-       /* background-image: url("/images/background.png");*/
+
+        /* background-image: url("/images/background.png");*/
         background-size: cover;
         background-repeat: no-repeat;
         background-color: #3d3b3bc7;
         background-attachment: fixed;
         background-position: center;
-    
     }
-    section li{
+    section li {
         cursor: pointer;
     }
 
-    
-    #floating-cart-button{
+    #floating-cart-button {
         position: fixed;
         top: 4rem;
         right: 1rem;
         z-index: 1100;
-        background: #4E342E;
+        background: #4e342e;
         color: #fff;
         border: none;
-        padding: .4rem .7rem;
-        border-radius: .7rem;
-        box-shadow: 0 2px 10px rgba(0,0,0,.3);
+        padding: 0.4rem 0.7rem;
+        border-radius: 0.7rem;
+        box-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
         cursor: pointer;
         font-weight: bold;
-		font-size: 1rem;
+        font-size: 1rem;
     }
-    #floating-cart-button span{
-        margin-left: .3rem;
-        background: #A7A67E;
+    #floating-cart-button span {
+        margin-left: 0.3rem;
+        background: #a7a67e;
         color: #fff;
-        padding: .1rem .4rem;
-        border-radius: .5rem;
+        padding: 0.1rem 0.4rem;
+        border-radius: 0.5rem;
         font-size: 1rem;
     }
 
-    #cart-drawer{
+    #cart-drawer {
         position: fixed;
         top: 0;
         right: 0;
         width: 85%;
         max-width: 360px;
         height: 60%;
-        background: rgba(20,20,20,0.98);
+        background: rgba(20, 20, 20, 0.519);
         color: white;
-        box-shadow: -4px 0 16px rgba(0,0,0,.4);
+        box-shadow: -4px 0 16px rgba(0, 0, 0, 0.4);
         transform: translateX(110%);
-        transition: transform .25s ease;
+        transition: transform 0.4s ease;
         z-index: 1200;
-        padding: .8rem;
-        backdrop-filter: blur(4px);
-		border: solid white 2px;
-		border-radius: 1rem;
-		background-image: url("/images/background.png");
+        padding: 0.8rem;
+        backdrop-filter: blur(10px);
+        border: solid white 2px;
+        border-radius: 1rem;
     }
-    #cart-drawer.open{
+    #cart-drawer.open {
         transform: translateX(0);
     }
-    #cart-panel .cart-header{
+    #cart-panel .cart-header {
         display: flex;
         justify-content: space-between;
         align-items: center;
-        margin-bottom: .5rem;
+        margin-bottom: 0.5rem;
     }
-    #close-cart{
+    #close-cart {
         background: transparent;
         color: #fff;
         border: none;
         font-size: 1.2rem;
         cursor: pointer;
     }
-    #coupon-form input{
-        padding: .3rem .6rem;
-        border-radius: .4rem;
+    #coupon-form input {
+        padding: 0.3rem 0.6rem;
+        border-radius: 0.4rem;
         border: none;
-        margin-top: .3rem;
+        margin-top: 0.3rem;
     }
-    #coupon-form button{
-        margin-left: .5rem;
-        padding: .3rem .8rem;
+    #coupon-form button {
+        margin-left: 0.5rem;
+        padding: 0.3rem 0.8rem;
         border: none;
-        border-radius: .5rem;
-        background: #4E342E;
+        border-radius: 0.5rem;
+        background: #4e342e;
         color: white;
         cursor: pointer;
     }
-    #checkout-btn.checkout{
+    #checkout-btn.checkout {
         width: 100%;
-        margin-top: .6rem;
-        padding: .6rem .8rem;
+        margin-top: 0.6rem;
+        padding: 0.6rem 0.8rem;
         border: none;
-        border-radius: .5rem;
-        background: #A7A67E;
+        border-radius: 0.5rem;
+        background: #a7a67e;
         color: white;
         font-weight: bold;
         cursor: pointer;
     }
-    :global(.reveal){
+    :global(.reveal) {
         opacity: calc(var(--ratio, 0));
         transform: translateY(calc(12px * (1 - var(--ratio, 0))));
         filter: blur(calc(6px * (1 - var(--ratio, 0))));
-        transition: opacity 1s ease, transform 1s ease, filter 1s ease;
+        transition:
+            opacity 1s ease,
+            transform 1s ease,
+            filter 1s ease;
         will-change: opacity, transform, filter;
     }
-    :global(.reveal-visible){
+    :global(.reveal-visible) {
         opacity: 1;
         transform: none;
         filter: blur(0);
     }
 </style>
-
-
-
