@@ -1,0 +1,24 @@
+---
+const {image} = Astro.props;
+const {title} = Astro.props;
+---
+
+<div id="banner" style={`--background-image: url(${image});`}>
+    <h1>{title}</h1>
+        <p>Disfruta de la mejor comida en un ambiente acogedor y familiar.</p>
+    </div>
+    
+    <style>
+        #banner{
+        color: white;
+        text-align: center;
+        padding: 1rem;
+        margin: 1rem auto;
+        border: 1px solid #cccccc00;
+        border-radius: 5rem;
+        height: 250px;
+        background-image: var(--background-image);
+        background-size: cover;
+        background-repeat: no-repeat;
+        background-position: center;
+    }	

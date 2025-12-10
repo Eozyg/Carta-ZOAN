@@ -1,0 +1,160 @@
+---
+import Layout from '../layouts/Layout.astro'
+import Header from '../components/Header.astro'
+import Nav from '../components/Nav.astro'
+import Banner from '../components/Banner.astro'
+import Footer from '../components/Footer.astro'
+
+---
+
+<Layout titlePage="BEBIDAS">
+    <Header/>
+    <Banner title="Bienvenido a bebidas" image="/images/Bebidas.webp"/>
+    <Nav/> 
+    <div id="bebidas">
+        <section class="Bebidas">
+            <h3>Con alcohol</h3>
+            <ul>
+                <li>
+                    <h4>Cerveza Artesanal 500ml</h4>
+                    <img src="https://topbeer.mx/wp-content/uploads/2022/08/tipos-de-cerveza-en-beer-flight-1024x683.jpg" alt="Cerveza Artesanal">
+                    <p>Cerveza tirada IPA, APA, Roja, Negra, Rubia</p>
+                    <p>Precio: <span class="precio">$6.000</span></p>
+
+                </li>
+                <li>
+                    <h4>Porrón Cervezas Industriales</h4>
+                    <img src="https://statics.eleconomista.com.ar/2020/05/614e35558a6d8.jpeg" alt="Porron de cerveza">
+                    <p>Heineken, Stella Artois, Patagonia, Blue moon</p>
+                    <p>Precio: <span class="precio">$8.000</span></p>
+                </li>
+            
+                <li>
+                    <h4>Tragos de autor</h4>
+                    <img src="https://hips.hearstapps.com/es.h-cdn.co/hares/images/cultura/viajes-planes/las-mejores-barras-de-cocteleria-de-espana/2465049-4-esl-ES/las-mejores-barras-de-cocteleria-de-espana.jpg?crop=1xw:0.7490636704119851xh;center,top&resize=1200:*" alt="Tragos">
+                    <p>Aurora boreal, fuego celestial, Espíritu del bosque </p>
+                    <p>precio: <scan class="precio"> $8.000</scan></p>
+                </li>
+                <li>
+                    <h4>Tragos de litro</h4>
+                    <img src="https://img.freepik.com/foto-gratis/primer-plano-gin-tonic-rose-frambuesas-lima_181624-33568.jpg" alt="Trago de litro">
+                    <p>Fernet, Gin, Vodka, Cuba libre</p>
+                    <p>Precio: <scan class="precio"> $12.000</scan></p>
+                </li>
+                <li>
+                    <h4>Vino en copa</h4>
+                    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRQpU3jeLqNbV6FmoZUguXdQRs7aayVksreTA&s" alt="Trago de litro">
+                    <p>Blanco, cabernet, cabernet suavignon, tinto</p>
+                    <p>Precio: <span class="precio">$8.000</span></p>
+                </li>
+            </ul>
+        
+            <h3>Sin alcohol</h3>
+            <ul>
+                <li>
+                    <h4>Agua c/s gas</h4>
+                    <img src="https://jumboargentina.vtexassets.com/arquivos/ids/795828-800-600?v=638313501973800000&width=800&height=600&aspect=true" alt="Agua">
+                    <p>Agua con, o sin gas. Villavicencio</p>
+                    <p>Precio: <span class="precio">$3.000</span></p>
+                </li>
+                <li>
+                    <h4>Limonada</h4>
+                    <img src="https://7diasdesabor.com/wp-content/uploads/2024/05/WEB-BEBIDA-4.png" alt="Limonadas">
+                    <p>Limonada de frutos rojos, con o sin menta y jengibre</p>
+                    <p>Precio: <span class="precio">$6.000</span></p>
+                </li>
+                <li>
+                    <h4>Gaseoas 300ml</h4>
+                    <img src="https://diariondi.com/wp-content/uploads/2023/11/gasesoas.jpg" alt="Gaseosas linea coca cola">
+                    <p>Coca cola, Fanta, Sprite</p>
+                    <p>Precio: <span class="precio">$4.000</span></p>
+                </li>
+                <li>
+                    <h4>Café</h4>
+                    <img src="https://www.idbinvest.org/sites/default/files/styles/size936x656/public/blog_post/iStock_000043355764Small2.jpg.webp?itok=C2I_4rS3" alt="café">
+                    <p>cortado, expresso, lágrima</p>
+                    <p>Precio: <span class="precio">$5.000</span></p>
+                </li>
+                <li>
+                    <h4>Té</h4>
+                    <img src="https://http2.mlstatic.com/D_NQ_NP_871173-MLA81589126086_012025-O.webp" alt="Té">
+                    <p>Té en hebras</p>
+                    <p>Precio: <span class="precio">$5.000</span></p>
+                </li>
+            </ul>
+        </section>
+    </div>
+    
+    
+    
+    <Footer/>
+</Layout>
+
+
+<style>
+    section{;
+        display: block;
+        width: 100%;
+        min-width: 0;
+        color: rgba(255, 255, 255, 0.817);
+    }
+    section ul{
+        display: flex;
+        flex-wrap: wrap;
+        gap: 1rem;
+        padding: 0;
+        margin: 0;
+    }
+    section h3{
+        text-align: center;
+    }
+    section li{
+        flex: 1 1 260px;
+        background-color: #4e342eaa;
+        list-style: none;
+        box-sizing: border-box;
+        margin: 1rem 0;
+        box-shadow: 0px 0px 5px 1px rgba(0, 0, 0, 0.308);
+        padding: 1rem;
+        border-radius: 1rem;
+       
+    }
+    section h4{
+        text-decoration: none;
+        margin-top: 0;
+         color: #d39f45b8
+    }
+    section h3{
+        text-decoration: none;
+        color: #d16541b8
+    }
+
+    li img{
+        width: 90%;
+        border-radius: .7rem;
+    }
+
+    #bebidas{
+        display: flex;
+        flex-wrap: wrap;
+    }
+    .precio {
+        
+                font-size: 20px; /* Tamaño de fuente grande */
+                font-weight: lighter 10px; /* Negrita */
+                color: #c8c667; /* Naranja llamativo */
+                background-color: #d16541b8; /* Fondo amarillo */
+                padding: 2px 5px; /* Espaciado interno */
+                border-radius: 10px; /* Bordes redondeados */
+                display: inline-block; /* Para que se vea bien */
+    }
+
+       #bebidas {
+        justify-content: center;
+        display: block;
+    }
+
+    @media (max-width: 640px){
+        section li{ flex: 1 1 100%; }
+    }
+</style>

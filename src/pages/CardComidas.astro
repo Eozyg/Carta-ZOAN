@@ -1,0 +1,151 @@
+---
+import Layout from '../layouts/Layout.astro'
+import Header from '../components/Header.astro'
+import Banner from '../components/Banner.astro'
+import Nav from '../components/Nav.astro'
+import Footer from '../components/Footer.astro'
+
+---
+
+<Layout titlePage="COMIDAS">
+    <Header/>
+    <Banner title="Bienvenido a comestibles" image="/images/Banner.webp"/>
+    <Nav/> 
+
+        
+    <div id="comestibles">
+        <section class="carnes">
+        
+            <ul>
+                <li>
+                    <h4>Pollo con crema</h4>
+                    <img src="https://media.airedesantafe.com.ar/p/36e95abc61a140fc69dfdc44893ee3fa/adjuntos/268/imagenes/003/792/0003792396/1200x0/smart/imagepng.png" alt="Pollo a la crema">
+                    <p>Pollo con papas al horno y verdeo</p>
+                    <p>Precio: <span class="precio">$16.999</span></p>
+                </li>
+                <li>
+                    <h4>Carne al horno</h4>
+                    <img src="https://cafison.com/wp-content/uploads/2020/04/Entran%CC%83a.jpg" alt="Carne al horno">
+                    <p>Entraña con verduras al horno</p>
+                    <p>Precio: <span class="precio">$21.999</span></p>                </li>
+            
+                <li>
+                    <h4>Pasta fresca con salsa a eleccion</h4>
+                    <img src="https://i.blogs.es/c9d366/pasta_fresca/840_560.jpg" alt="Pasta fresca">
+                    <p>Sorrentinos, agnolottis, penne rigate, spaghetti</p>
+                    <p>Precio: <span class="precio">$18.999</span></p>
+                </li>
+                <li>
+                    <h4>Pizza</h4>
+                    <img src="https://img-global.cpcdn.com/recipes/2a0a7551e73cafdd/680x482cq70/pizza-con-burrata-foto-principal.jpg" alt="Pizza">
+                    <p>Con burrata, rucula y jamon crudo</p>
+                    <p>Precio: <span class="precio">$16.999</span></p>
+                </li>
+                <li>
+                    <h4>Milanesa de lomo</h4>
+                    <img src="https://comedera.com/wp-content/uploads/sites/9/2024/06/lomo-de-cerdo-a-la-milanesa.jpg" alt="Milanesa de lomo">
+                    <p>con papas a eleccion</p>
+                    <p>Precio: <span class="precio">$19.999</span></p>
+                </li>
+            </ul>
+            
+            <ul>
+                <li>
+                    <h4>Lasagna de la nonna</h4>
+                    <img src="https://www.recetasdesbieta.com/wp-content/uploads/2018/10/lasagna-original..jpg" alt="Lasagna">
+                    <p>Agua con, o sin gas. Villavicencio</p>
+                    <p>Precio: <span class="precio">$18.999</span></p>
+                </li>
+                <li>
+                    <h4>Lomo con papas</h4>
+                    <img src="https://peopleenespanol.com/thmb/qsW8lWDUrEcAMRGyI7Uv4RQQdjs=/1500x0/filters:no_upscale():max_bytes(150000):strip_icc()/gettyimages-968253996-2000-df871d3df11249deb10e71e6c3d2fb44.jpg" alt="Lomo con papas">
+                    <p>Lomo con papas fritas, pure o al horno</p>
+                    <p>Precio: <span class="precio">$24.999</span></p>                </li>
+                <li>
+                    <h4>Sorrentinos con salsa</h4>
+                    <img src="https://media.airedesantafe.com.ar/p/5010661cdf536b9e77b3dc798f3f8d63/adjuntos/268/imagenes/003/788/0003788030/1200x675/smart/sorrentinos-jamon-y-quesojpg.jpg" alt="Sorrentinos con salsa">
+                    <p>Sorrentinos de  jyq, ricota o verduras, con salsa cuatro quesos</p>
+                    <p>Precio: <span class="precio">$19.999</span></p>                </li>
+                <li>
+                    <h4>Bife de chorizo</h4>
+                    <img src="https://www.circuitogastronomico.com/wp-content/uploads/2018/11/bife-tucson-en-baja.jpg" alt="Bife de chorizo">
+                    <p>con papas ciboulette</p>
+                    <p>Precio: <span class="precio">$25.999</span></p>                </li>
+                <li>
+                    <h4>Gnocchi con salsa</h4>
+                    <img src="https://assets.tmecosys.com/image/upload/t_web767x639/img/recipe/ras/Assets/EBBE6346-F025-4CFD-A032-42D416F98164/Derivates/436443CF-31E4-45EB-BBD5-BEC76A6F4E07.jpg" alt="Gnocchi con salsa">
+                    <p>Gnocchi con salsa a eleccion</p>
+                    <p>Precio: <span class="precio">$18.999</span></p>                </li>
+            </ul>
+        </section>
+    </div>
+    
+    
+    
+    <Footer/>
+</Layout>
+
+
+<style>
+  
+        
+    
+    section{
+        display: block;
+        width: 100%;
+        min-width: 0;
+        color: rgba(255, 255, 255, 0.817);
+    }
+    section ul{
+        display: flex;
+        flex-wrap: wrap;
+        gap: 1rem;
+        padding: 0;
+        margin: 0;
+    }
+    section li{
+        flex: 1 1 260px;
+        background-color: #4e342eaa;
+        list-style: none;
+        box-sizing: border-box;
+        margin: 1rem 0;
+        box-shadow: 0px 0px 5px 1px rgba(0, 0, 0, 0.308);
+        padding: 1rem;
+        border-radius: 1rem;
+       
+    }
+    section h4{
+        text-decoration: none;
+        margin-top: 0;
+         color: #d39f45b8
+    }
+    section h3{
+        text-decoration: underline;
+    }
+
+    li img{
+        width: 90%;
+        border-radius: .7rem;
+    }
+
+    
+    .precio {
+        
+                font-size: 20px; /* Tamaño de fuente grande */
+                font-weight: lighter 10px; /* Negrita */
+                color: #c8c667; /* Naranja llamativo */
+                background-color: #d16541b8; /* Fondo amarillo */
+                padding: 2px 5px; /* Espaciado interno */
+                border-radius: 10px; /* Bordes redondeados */
+                display: inline-block; /* Para que se vea bien */
+    }
+
+    #comestibles {
+        justify-content: center;
+        display: block;
+    }
+
+    @media (max-width: 640px){
+        section li{ flex: 1 1 1000%; }
+    }
+</style>

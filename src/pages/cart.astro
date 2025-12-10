@@ -1,0 +1,40 @@
+---
+import Layout from '../layouts/Layout.astro'
+import Header from '../components/Header.astro'
+import Nav from '../components/Nav.astro'
+import Banner from '../components/Banner.astro'
+import Footer from '../components/Footer.astro'
+---
+
+<Layout titlePage="Carrito">
+    <Header/>
+    <Banner title="Tu carrito de compras" image="/images/Banner.webp"/>
+    <Nav/>
+
+    <section id="cart" style="color:white;">
+        <h3>Carrito de compras</h3>
+
+        <div id="cart-empty" style="margin:.5rem 0;">Tu carrito está vacío.</div>
+        <div id="cart-items"></div>
+
+        <hr/>
+
+        <div id="cart-summary" style="margin:.5rem 0;">
+            <p>Subtotal: <span id="cart-subtotal">$0</span></p>
+            <p>Descuento: <span id="cart-discount">$0</span></p>
+            <p>Total: <strong id="cart-total">$0</strong></p>
+        </div>
+
+        <form id="coupon-form" style="margin:.5rem 0;">
+            <label for="coupon-code">Cupón de descuento</label><br/>
+            <input id="coupon-code" type="text" placeholder="DESCUENTO10" style="padding:.3rem .6rem; border-radius:.5rem; border:none;"/>
+            <button type="submit" style="margin-left:.5rem; padding:.3rem .8rem; border:none; border-radius:.5rem; background:#3d3bcf; color:white;">Aplicar cupón</button>
+        </form>
+
+        <button id="checkout-btn" style="padding:.5rem 1rem; border:none; border-radius:.6rem; background:#00b894; color:white; font-weight:bold;">
+            Finalizar compra
+        </button>
+    </section>
+
+    <Footer/>
+</Layout>

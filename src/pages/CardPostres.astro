@@ -1,0 +1,116 @@
+---
+import Layout from '../layouts/Layout.astro'
+import Header from '../components/Header.astro'
+import Nav from '../components/Nav.astro'
+import Footer from '../components/Footer.astro'
+import Banner from '../components/Banner.astro'
+---
+
+
+<Layout titlePage="POSTRES">
+    <Header/>
+    <Banner title="Los postres hechos en el día más ricos!" image="/images/Bannerpostres.webp"/>
+    <Nav/> 
+
+        
+    <div id="Postres">
+        <section class="carnes">
+            <h3>Postres</h3>
+            <ul>
+                <li><center>
+                    <h4>Coulant de Chocolate</h4>
+                    <img src="https://cdn.recetasderechupete.com/wp-content/uploads/2022/03/Coulant-de-chocolate.jpg" alt="Volcan de chocolate">
+                    <p>Bizcocho de chocolate con un interior fundido, servido con helado de vainilla.</p>
+                    <p>Precio: <span class="precio">$6.500</span></p>
+                </li>
+                <li><center>
+                    <h4>Cheesecake de Frutos Rojos</h4>
+                    <img src="https://escuelamundopastel.com/wp-content/uploads/2018/11/ORGANIZACI%C3%93N-DE-EVENTOS-10.png" alt="Cheesecake de frutos rojos">
+                    <p>Tarta de queso cremosa sobre base de galleta, cubierta con salsa de frutos rojos.</p>
+                    <p>Precio: <span class="precio">$6.999</span></p>                </li>
+            
+                <li><center>
+                    <h4>Tiramisú Clásico</h4>
+                    <img src="https://recetas123.net/wp-content/uploads/tiramisu.jpg" alt="Tiramusú">
+                    <p>Sorrentinos, agnolottis, penne rigate, spaghetti</p>
+                    <p>Precio: <span class="precio">$5.999</span></p>
+                </li>
+                <li><center>
+                    <h4>Créme Brulée</h4>
+                    <img src="https://images.squarespace-cdn.com/content/v1/5eed333596cab776eee55b17/a405b1ee-11fd-42a3-af36-b53af3392238/AdobeStock_156263555.jpeg" alt="Crema quemada">
+                    <p>Suave crema de vainilla con una capa crujiente de azúcar caramelizado.</p>
+                    <p>Precio: <span class="precio">$7.000</span></p>
+                </li>
+                <li><center>
+                    <h4>Flan casero con dulce de leche</h4>
+                    <img src="https://www.laserenisima.com.ar/recetaslaserenisima/img/recetas/portada/flan-clasico.jpg" alt="Flan casero con dulce de leche">
+                    <p>Flan de huevo con caramelo y acompañado de dulce de leche o crema.</p>
+                    <p>Precio: <span class="precio">$5.500</span></p>
+                </li>
+            </ul>
+        </section>
+        
+    </div>
+    
+    
+    
+    <Footer/>
+</Layout>
+
+
+<style>
+    section{
+        display: block;
+        width: 100%;
+        min-width: 0;
+        color: white;
+    }
+    section ul{
+        display: flex;
+        flex-wrap: wrap;
+        gap: 1rem;
+        padding: 0;
+        margin: 0;
+    }
+    section li{
+        flex: 1 1 260px;
+        list-style: none;
+        box-sizing: border-box;
+        margin: 1rem 0;
+        box-shadow: 0px 0px 5px 1px rgba(0, 0, 0, 0.308);
+        background-color: #4e342eaa;
+        padding: 1rem;
+        border-radius: 1rem;
+    }
+    section h4{
+        text-decoration: underline;
+        margin-top: 0;
+    }
+    section h3{
+        text-decoration: underline;
+    }
+
+    li img{
+        width: 90%;
+        border-radius: .7rem;
+    }
+
+    #bebidas{
+        display: block;
+    }
+
+    @media (max-width: 640px){
+        section li{ flex: 1 1 100%; }
+    }
+ .precio {
+        
+                font-size: 20px; /* Tamaño de fuente grande */
+                font-weight: lighter 10px; /* Negrita */
+                color: #c8c667; /* Naranja llamativo */
+                background-color: #d16541b8; /* Fondo amarillo */
+                padding: 2px 5px; /* Espaciado interno */
+                border-radius: 10px; /* Bordes redondeados */
+                display: inline-block; /* Para que se vea bien */
+                
+    }
+</style>

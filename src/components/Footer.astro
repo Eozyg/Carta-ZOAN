@@ -1,0 +1,87 @@
+---
+// Footer.astro
+---
+<footer>
+    
+    <section class="footer">
+        <p>&copy; 2025 Zoan Gen. Todos los derechos reservados</p>
+        <p>Contacto: Zoan.development@zoan.com</p>
+        <p>Quiénes somos: Somos Zoan, una empresa dedicada a proporcionar soluciones innovadoras.</p>
+    </section>
+
+    <div>       
+            <form id="ratingform"><h3>Qué te parecio el servicio</h3>
+                <div id="rating">
+                
+                <div> <input type="radio" name="servicio" value="1">1</div>
+                 <div><input type="radio" name="servicio" value="2">2</div>
+                 <div><input type="radio" name="servicio" value="3">3</div>
+                 <div><input type="radio"  name="servicio" value="4">4</div>
+                 <div><input type="radio" name="servicio" value="5">5</div>
+                </div>  
+            <button type="submit">Enviar comentarios</button>
+            </form>
+                 
+    </div>
+
+
+</footer>
+
+<style>
+    footer{
+                
+            background-color: var(--primary-color, #4E342E); 
+            width: 92%;
+            color: white; 
+            text-align: center; 
+            padding: 1rem; 
+            margin: 1rem auto; 
+            border-radius: 15px / 15px;
+            box-shadow: 0px 0px 1px 1px #C2A572;   
+    } footer p{
+        margin: 0;
+    }
+#rating{
+    display: flex;
+    justify-content: center;
+    gap: .5rem;
+    
+}
+#rating div{
+border: 1px solid white;
+    padding: .3rem; 
+    border-radius: .7rem;
+    transition: .4s;
+}
+    #rating div:hover{
+        box-shadow : 0px 0px 15px 0px rgb(255, 255, 255);        
+    
+    }
+
+#ratingform button{
+    margin-top: 1rem;
+    background-color: var(--primary-color, #4E342E); 
+    color: rgb(255, 255, 255); 
+    border: 1px solid white; 
+    padding: .5rem; 
+    border-radius: .7rem;
+    cursor: pointer;
+    transition: .4s
+}
+#ratingform button:hover{
+    box-shadow : 0px 0px 15px 1px rgb(255, 255, 255);
+}
+
+#ratingform {
+    background-color: #4E342E);
+    border: 1px solid white;
+    padding: 0rem 1rem 1rem 1rem;   
+    margin: 1rem;
+    border-radius: 1rem;
+    display: inline-block    
+    
+}
+
+
+</style>
+
