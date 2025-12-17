@@ -8,7 +8,7 @@ import Footer from '../components/Footer.astro'
 
 <Layout titlePage="Carrito">
     <Header/>
-    <Banner title="Tu carrito de compras" image="/images/Banner.webp"/>
+    <Banner title="Tu carrito de compras" image={`${import.meta.env.BASE_URL}images/Banner.webp`}/>
     <Nav/>
 
     <section id="cart" style="color:white;">

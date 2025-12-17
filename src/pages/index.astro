@@ -3,6 +3,9 @@ import Layout from '../layouts/Layout.astro';
 import Header from '../components/Header.astro';
 import Nav from "../components/Nav.astro"
 import Footer from "../components/Footer.astro"
+const base = import.meta.env.DEV
+  ? '/'
+  : (import.meta.env.BASE_URL.endsWith('/') ? import.meta.env.BASE_URL : import.meta.env.BASE_URL + '/');
 ---
 
 <Layout titlePage="Inicio ZOAN">
@@ -13,7 +16,7 @@ import Footer from "../components/Footer.astro"
 		<p>es una experiencia gastronómica única. Combinamos ingredientes de alta calidad, un ambiente sofisticado y un servicio excepcional para crear momentos inolvidables.</p>
 		<p>En ZOAN, cada plato está diseñado para sorprender tus sentidos, ofreciendo sabores innovadores en un espacio acogedor y moderno.</p>
 <div id="carta"> 
-    <a href="/CardComidas">
+    <a href={`${base}CardComidas`}>
     Carta
 </a>
 </div>
@@ -51,7 +54,5 @@ import Footer from "../components/Footer.astro"
 
 	
 </style>
-
-
 
 

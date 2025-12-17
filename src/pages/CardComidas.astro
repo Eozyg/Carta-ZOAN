@@ -9,7 +9,7 @@ import Footer from '../components/Footer.astro'
 
 <Layout titlePage="COMIDAS">
     <Header/>
-    <Banner title="Bienvenido a comestibles" image="/images/Banner.webp"/>
+    <Banner title="Bienvenido a comestibles" image={`${import.meta.env.BASE_URL}images/Banner.webp`}/>
     <Nav/> 
 
         

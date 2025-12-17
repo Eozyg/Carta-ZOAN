@@ -9,7 +9,7 @@ import Footer from '../components/Footer.astro'
 
 <Layout titlePage="BEBIDAS">
     <Header/>
-    <Banner title="Bienvenido a bebidas" image="/images/Bebidas.webp"/>
+    <Banner title="Bienvenido a bebidas" image={`${import.meta.env.BASE_URL}images/Bebidas.webp`}/>
     <Nav/> 
     <div id="bebidas">
         <section class="Bebidas">
@@ -33,13 +33,13 @@ import Footer from '../components/Footer.astro'
                     <h4>Tragos de autor</h4>
                     <img src="https://hips.hearstapps.com/es.h-cdn.co/hares/images/cultura/viajes-planes/las-mejores-barras-de-cocteleria-de-espana/2465049-4-esl-ES/las-mejores-barras-de-cocteleria-de-espana.jpg?crop=1xw:0.7490636704119851xh;center,top&resize=1200:*" alt="Tragos">
                     <p>Aurora boreal, fuego celestial, Espíritu del bosque </p>
-                    <p>precio: <scan class="precio"> $8.000</scan></p>
+                    <p>precio: <span class="precio"> $8.000</span></p>
                 </li>
                 <li>
                     <h4>Tragos de litro</h4>
                     <img src="https://img.freepik.com/foto-gratis/primer-plano-gin-tonic-rose-frambuesas-lima_181624-33568.jpg" alt="Trago de litro">
                     <p>Fernet, Gin, Vodka, Cuba libre</p>
-                    <p>Precio: <scan class="precio"> $12.000</scan></p>
+                    <p>Precio: <span class="precio"> $12.000</span></p>
                 </li>
                 <li>
                     <h4>Vino en copa</h4>

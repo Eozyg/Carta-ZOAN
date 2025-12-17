@@ -1,8 +1,13 @@
+---
+const base = import.meta.env.DEV
+  ? '/'
+  : (import.meta.env.BASE_URL.endsWith('/') ? import.meta.env.BASE_URL : import.meta.env.BASE_URL + '/');
+---
 <div>
-    <a href="/">Home</a>
-    <a href="/CardComidas">Comestibles</a>
-    <a href="/CardPostres">Postres</a>
-    <a href="/CardDrinks">Bebidas</a>
+    <a href={base}>Home</a>
+    <a href={`${base}CardComidas`}>Comestibles</a>
+    <a href={`${base}CardPostres`}>Postres</a>
+    <a href={`${base}CardDrinks`}>Bebidas</a>
 </div>
 
 <style>

@@ -9,7 +9,7 @@ import Banner from '../components/Banner.astro'
 
 <Layout titlePage="POSTRES">
     <Header/>
-    <Banner title="Los postres hechos en el día más ricos!" image="/images/Bannerpostres.webp"/>
+    <Banner title="Los postres hechos en el día más ricos!" image={`${import.meta.env.BASE_URL}images/Bannerpostres.webp`}/>
     <Nav/> 
 
         
@@ -17,31 +17,31 @@ import Banner from '../components/Banner.astro'
         <section class="carnes">
             <h3>Postres</h3>
             <ul>
-                <li><center>
+                <li>
                     <h4>Coulant de Chocolate</h4>
                     <img src="https://cdn.recetasderechupete.com/wp-content/uploads/2022/03/Coulant-de-chocolate.jpg" alt="Volcan de chocolate">
                     <p>Bizcocho de chocolate con un interior fundido, servido con helado de vainilla.</p>
                     <p>Precio: <span class="precio">$6.500</span></p>
                 </li>
-                <li><center>
+                <li>
                     <h4>Cheesecake de Frutos Rojos</h4>
                     <img src="https://escuelamundopastel.com/wp-content/uploads/2018/11/ORGANIZACI%C3%93N-DE-EVENTOS-10.png" alt="Cheesecake de frutos rojos">
                     <p>Tarta de queso cremosa sobre base de galleta, cubierta con salsa de frutos rojos.</p>
                     <p>Precio: <span class="precio">$6.999</span></p>                </li>
             
-                <li><center>
+                <li>
                     <h4>Tiramisú Clásico</h4>
                     <img src="https://recetas123.net/wp-content/uploads/tiramisu.jpg" alt="Tiramusú">
                     <p>Sorrentinos, agnolottis, penne rigate, spaghetti</p>
                     <p>Precio: <span class="precio">$5.999</span></p>
                 </li>
-                <li><center>
+                <li>
                     <h4>Créme Brulée</h4>
                     <img src="https://images.squarespace-cdn.com/content/v1/5eed333596cab776eee55b17/a405b1ee-11fd-42a3-af36-b53af3392238/AdobeStock_156263555.jpeg" alt="Crema quemada">
                     <p>Suave crema de vainilla con una capa crujiente de azúcar caramelizado.</p>
                     <p>Precio: <span class="precio">$7.000</span></p>
                 </li>
-                <li><center>
+                <li>
                     <h4>Flan casero con dulce de leche</h4>
                     <img src="https://www.laserenisima.com.ar/recetaslaserenisima/img/recetas/portada/flan-clasico.jpg" alt="Flan casero con dulce de leche">
                     <p>Flan de huevo con caramelo y acompañado de dulce de leche o crema.</p>
@@ -95,7 +95,7 @@ import Banner from '../components/Banner.astro'
         border-radius: .7rem;
     }
 
-    #bebidas{
+    #Postres{
         display: block;
     }
 
