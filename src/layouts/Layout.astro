@@ -1,5 +1,7 @@
 ---
 const { titlePage } = Astro.props;
+const bg = import.meta.env.BASE_URL + "images/back.webp";;
+
 ---
 
 <!doctype html>
@@ -17,6 +19,7 @@ const { titlePage } = Astro.props;
         />
         <title>{titlePage}</title>
     </head>
+    <div class="background">
     <body>
         <slot />
         <!-- Botón flotante del carrito -->
@@ -59,6 +62,7 @@ const { titlePage } = Astro.props;
             </div>
         </aside>
     </body>
+    </div>
 </html>
 
 <script src={`${import.meta.env.BASE_URL}cart.js`} is:inline></script>
@@ -126,7 +130,7 @@ const { titlePage } = Astro.props;
 
 <style>
     html {
-        background-image: url("public/images/back.webp");
+        background-image: url("https://red2030.com/wp-content/uploads/2021/04/jardin_vertical_Snatander-scaled.jpg");
         background-size: cover;
         background-repeat: no-repeat;
         background-position: center;
@@ -143,7 +147,6 @@ const { titlePage } = Astro.props;
 
         font-family: "Poppins", serif;
 
-        /* background-image: url("/images/background.png");*/
         background-size: cover;
         background-repeat: no-repeat;
         background-color: #3d3b3bc7;
@@ -253,4 +256,9 @@ const { titlePage } = Astro.props;
         transform: none;
         filter: blur(0);
     }
+    .background {
+        
+        background: url("public/images/back.webp") cover no-repeat;
+    }
+
 </style>
